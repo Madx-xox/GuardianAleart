@@ -1,0 +1,237 @@
+:root {
+    --navy: #1B3B6F;
+    --teal: #065A60;
+    --coral: #FF6B6B;
+    --light: #F7F9FC;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light);
+    color: var(--navy);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    color: var(--navy);
+    font-size: 2.5rem;
+    margin: 1rem 0;
+}
+
+/* SOS Button Styles */
+.sos-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.sos-button {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: var(--coral);
+    color: white;
+    border: none;
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.sos-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+.pulse {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 20px rgba(255, 107, 107, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+    }
+}
+
+/* Map Styles */
+.map-section {
+    margin-bottom: 2rem;
+    background: white;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#map {
+    height: 400px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.route-info {
+    padding: 1rem;
+    background-color: var(--light);
+    border-radius: 8px;
+}
+
+/* Contacts Section */
+.contacts-section {
+    padding: 1rem;
+}
+
+.contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.contact-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.quick-call {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    background: white;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+}
+
+.quick-call:hover {
+    background-color: var(--light);
+}
+
+.icon {
+    font-size: 2rem;
+}
+
+.label {
+    color: var(--navy);
+    font-weight: bold;
+}
+
+.number {
+    color: var(--teal);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 500px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+#contactForm input {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#contactForm button {
+    padding: 0.8rem;
+    background-color: var(--teal);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+#contactForm button:hover {
+    background-color: var(--navy);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .sos-button {
+        width: 120px;
+        height: 120px;
+        font-size: 2rem;
+    }
+
+    #map {
+        height: 300px;
+    }
+
+    .modal-content {
+        margin: 20% auto;
+        padding: 1.5rem;
+    }
+}
